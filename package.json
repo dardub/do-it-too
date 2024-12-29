@@ -2,8 +2,13 @@
   "name": "do-it-app",
   "module": "index.ts",
   "type": "module",
+  "scripts": {
+    "start": "bun run ./src/index.ts",
+    "start:tailwind": "bunx tailwindcss -i ./src/_main.css -o ./src/build/styles.css --watch"
+  },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "tailwindcss": "^3.4.17"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
