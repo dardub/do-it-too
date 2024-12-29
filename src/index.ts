@@ -13,6 +13,7 @@ const server = Bun.serve({
 
     return new Response("Page not found", { status: 404 });
   },
+  port: 80,
 });
 
 console.log(`Listening on ${server.url}`);
