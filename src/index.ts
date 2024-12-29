@@ -15,8 +15,8 @@ const server = Bun.serve({
   },
   port: 443,
   tls: {
-    cert: Bun.file("/etc/letsencrypt/live/do-it.darrendub.me/cert1.pem"),
-    key: Bun.file("/etc/letsencrypt/live/do-it.darrendub.me/privkey1.pem"),
+    cert: Bun.file("/etc/letsencrypt/live/do-it.darrendub.me/cert.pem"),
+    key: Bun.file("/etc/letsencrypt/live/do-it.darrendub.me/privkey.pem"),
   }
 });
 
