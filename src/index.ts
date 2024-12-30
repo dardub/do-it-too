@@ -23,7 +23,7 @@ async function main() {
       },
     });
   } catch (error: any) {
-    const errorMessage = `Bun server error occurred\n ${error.message}`;
+    const errorMessage = `[${new Date()}] - ${error.message}\n`
     try {
       const logs = await Bun.file(LOG_PATH).text();
       await Bun.write(LOG_PATH, logs.concat(errorMessage));
