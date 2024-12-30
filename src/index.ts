@@ -18,8 +18,8 @@ async function main() {
       },
       port: 443,
       tls: {
-        cert: Bun.file("/etc/letsencrypt/live/do-it.darrendub.me/cert.pem"),
-        key: Bun.file("/etc/letsencrypt/live/do-it.darrendub.me/privkey.pem"),
+        cert: Bun.file("/home/darren/do-it-too/app/certs/cert.pem"),
+        key: Bun.file("/home/darren/do-it-too/app/certs/privkey.pem"),
       },
     });
   } catch (error: any) {
