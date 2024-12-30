@@ -1,4 +1,4 @@
-const LOG_PATH = "./src/logs/bun.log";
+const LOG_PATH = "./logs/bun.log";
 
 async function main() {
   try {
