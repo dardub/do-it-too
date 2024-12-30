@@ -22,14 +22,20 @@ async function main() {
         key: Bun.file("/home/darren/do-it-too/app/certs/privkey.pem"),
       },
     });
+
+    Logger(`Starting server at ${server.url}`);
   } catch (error: any) {
-    const errorMessage = `[${new Date()}] - ${error.message}\n`
-    try {
-      const logs = await Bun.file(LOG_PATH).text();
-      await Bun.write(LOG_PATH, logs.concat(errorMessage));
-    } catch (error) {
-      await Bun.write(LOG_PATH, "".concat(errorMessage));
-    }
+    Logger(error.message);
+  }
+}
+
+async function Logger(message: string) {
+  const errorMessage = `[${new Date()}] - ${message}\n`;
+  try {
+    const logs = await Bun.file(LOG_PATH).text();
+    await Bun.write(LOG_PATH, logs.concat(errorMessage));
+  } catch (error) {
+    await Bun.write(LOG_PATH, "".concat(errorMessage));
   }
 }
 
